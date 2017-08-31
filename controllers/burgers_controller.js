@@ -6,7 +6,7 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
+router.get("/index", function(req, res) {
     burger.selectAll(function(data) {
       var hbsObject = {
         burgers: data
@@ -30,7 +30,7 @@ router.get("/", function(req, res) {
     ], [
       req.body.burger_name, req.body.devoured, dateTime
     ], function() {
-      res.redirect("/");
+      res.redirect("/index");
     });
   });
   
@@ -42,7 +42,7 @@ router.get("/", function(req, res) {
     burger.updateOne({
       devoured: req.body.devoured,
     }, condition, function() {
-      res.redirect("/");
+      res.redirect("/index");
     });
   });
 
