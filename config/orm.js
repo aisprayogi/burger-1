@@ -24,7 +24,7 @@ function printQuestionMarks(num) {
         arr.push(key + "=" + ob[key]);
       }
     }
-    console.log(arr.toString());
+    //console.log(arr.toString());
     return arr.toString();
   }
   
@@ -40,7 +40,7 @@ function printQuestionMarks(num) {
       });
     },
     create: function(table, cols, vals, cb) {
-        console.log("orm.js");
+        //console.log("orm.js");
         var queryString = "INSERT INTO " + table;
     
         queryString += " (";
@@ -50,8 +50,8 @@ function printQuestionMarks(num) {
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
     
-        console.log(queryString);
-        console.log(vals);
+        //console.log(queryString);
+        //console.log(vals);
     
         connection.query(queryString, vals, function(err, result) {
           if (err) {
@@ -69,7 +69,7 @@ function printQuestionMarks(num) {
         queryString += " WHERE ";
         queryString += condition;
     
-        console.log(queryString);
+        //console.log(queryString);
         connection.query(queryString, function(err, result) {
           if (err) {
             throw err;

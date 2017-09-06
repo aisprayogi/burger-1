@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var path = require("path");
 
-var PORT = process.env.PORT || 3306;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 
@@ -18,6 +18,30 @@ app.use(methodOverride("_method"));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
+
+//wasn't sure how to declare helpers, giving it a try
+
+    //Calculate number of uneaten burgers
+    exphbs.create('get_Ready', function (obj) {
+        var cnt = 0;
+        for(var i=0;i<obj.length;i++){
+            if(obj.devoured === false)
+                cnt++;
+        }
+        return cnt;
+    }); 
+
+    //Calculate number of burgers that have been eaten
+    exphbs.create('get_Devoured', function (obj) {
+        var cnt = 0;
+        for(var i=0;i<obj.length;i++){
+            if(obj.devoured === true)
+                cnt++;
+        }
+        return cnt;
+    });
+
+    
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");

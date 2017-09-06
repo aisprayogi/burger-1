@@ -11,7 +11,7 @@ router.get("/index", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    //console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -20,7 +20,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    //console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -31,8 +31,8 @@ router.get("/", function(req, res) {
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date+' '+time;
 
-      console.log("burgers_controller.js");
-      console.log(date);
+      //console.log("burgers_controller.js");
+      //console.log(date);
 
     burger.insertOne([
       "burger_name", "devoured", "date"
@@ -46,7 +46,7 @@ router.get("/", function(req, res) {
   router.put("/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
-    console.log("condition", condition);
+    //console.log("condition", condition);
   
     burger.updateOne({
       devoured: req.body.devoured,
