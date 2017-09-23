@@ -10,6 +10,6 @@ This is a simple full stack application to demonstrate how to access a MySql dat
 The application displays the current content of the burger database to the user filtered by whether the burger has been eaten already.  An uneaten burger can be devoured by clicking the "Devour Me!" button.  This updates the status of the burger in the database and moves the burger from the uneaten column to the eaten column.  New burgers can be added at the bottom of the screen by typing in a name, selecting whether it has been eaten already, and clicking the "Add Burger" button.
 
 <h2>Running</h2>
-To run the application, go to this link.
+To run the application, go to this <a href="https://polar-lowlands-54134.herokuapp.com/">link</a>.
 
 <h2>Demo</h2>
